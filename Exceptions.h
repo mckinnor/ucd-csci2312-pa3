@@ -46,7 +46,7 @@ namespace Clustering {
 
     public:
         ZeroClustersEx();
-        std::string getName() const;
+        std::string getName() const{return __name;}
 
         friend std::ostream &operator<<(std::ostream &os, const ZeroClustersEx &ex);
     };
@@ -58,8 +58,8 @@ namespace Clustering {
 
     public:
         DataFileOpenEx(std::string filename);
-        std::string getFilename() const;
-        std::string getName() const;
+        std::string getFilename() const{return __filename;}
+        std::string getName() const{return __name;}
 
         friend std::ostream &operator<<(std::ostream &os, const DataFileOpenEx &ex);
     };

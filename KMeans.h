@@ -34,10 +34,10 @@ namespace Clustering {
         ~KMeans();
 
         // accessors
-        unsigned int getMaxIter();
-        unsigned int getNumIters();
-        unsigned int getNumNonemptyClusters();
-        unsigned int getNumMovesLastIter();
+        unsigned int getMaxIter(){return __maxIter;}
+        unsigned int getNumIters(){return __numIter;}
+        unsigned int getNumNonemptyClusters(){return __numNonempty;}
+        unsigned int getNumMovesLastIter(){return __numMovesLastIter;}
 
         // element access (for testing, no bounds checking)
         Cluster &operator[](unsigned int u);

@@ -23,8 +23,6 @@ using namespace Testing;
 #define DESC(x) desc(x, __LINE__)  // ugly hack, but saves some time
 
 
-
-
 // - - - - - - - - - - helper functions - - - - - - - - - -
 const Point point_in_and_out(const Point p) { return Point(p); }
 
@@ -164,7 +162,6 @@ void test_point_id(ErrorContext &ec, unsigned int numRuns) {
     for (int run = 0; run < numRuns; run ++)
     {
         ec.DESC("get a point's id");
-
         {
             Point p(15);
 

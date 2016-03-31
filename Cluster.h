@@ -48,10 +48,10 @@ namespace Clustering {
             Centroid &operator[](const Centroid &cent) = delete;
 
             // getters/setters
-            const Point get() const; // doesn't check for validity
+            const Point get() const{return __p;} // doesn't check for validity
             void set(const Point &p); // sets to valid
-            bool isValid() const;
-            void setValid(bool valid);
+            bool isValid() const{return __valid;}
+            void setValid(bool valid){__valid = valid;}
 
             // functions
             void compute();
@@ -60,7 +60,7 @@ namespace Clustering {
         };
 
     public:
-        static const char POINT_CLUSTER_ID_DELIM;
+        static const char POINT_CLUSTER_ID_DELIM = ':';
 
         Centroid centroid; // the cluster's centroid
 
@@ -72,9 +72,9 @@ namespace Clustering {
         ~Cluster();
 
         // Getters
-        unsigned int getSize() const;
-        unsigned int getDimensionality() const;
-        unsigned int getId() const;
+        unsigned int getSize() const{return __size;}
+        unsigned int getDimensionality() const{return __dimensionality;}
+        unsigned int getId() const{return __id;}
 
         // Add/remove: They allow calling c1.add(c2.remove(p));
         void add(const Point &);
@@ -122,10 +122,8 @@ namespace Clustering {
         class Move {
             const Point &__p;
             Cluster &__from, &__to;
-
         public:
             Move(const Point &p, Cluster &from, Cluster &to);
-
             void perform();
         };
     };
